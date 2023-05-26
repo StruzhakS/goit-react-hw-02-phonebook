@@ -1,0 +1,11 @@
+.inputName {
+  display: block;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.inputPhone {
+  display: block;
+  margin-top: 20px;
+  background-color: black;
+}

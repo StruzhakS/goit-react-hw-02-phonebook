@@ -1,12 +1,12 @@
 import propTypes from 'prop-types';
 import React from 'react';
 
-const Filter = ({ onChange, value }) => {
+const Filter = ({ filterContacts, value }) => {
   return (
     <label>
       Find contacts by name
       <input
-        onChange={onChange}
+        onChange={filterContacts}
         name="filter"
         type="text"
         value={value}
@@ -18,6 +18,6 @@ const Filter = ({ onChange, value }) => {
 
 Filter.propTypes = {
   value: propTypes.string.isRequired,
-  onChange: propTypes.func.isRequired,
+  filterContacts: propTypes.func.isRequired,
 };
 export default Filter;
