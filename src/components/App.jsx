@@ -12,30 +12,30 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
+    // name: '',
+    // number: '',
   };
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
+  // handleChange = e => {
+  //   const { name, value } = e.target;
+  //   this.setState({ [name]: value });
+  // };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const contact = {
-      name: this.state.name,
-      number: this.state.number,
-      id: nanoid(),
-    };
-    this.addContact(contact);
-    this.setState({ name: '', number: '' });
-  };
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   const contact = {
+  //     name: this.state.name,
+  //     number: this.state.number,
+  //     id: nanoid(),
+  //   };
+  //   this.addContact(contact);
+  //   this.setState({ name: '', number: '' });
+  // };
 
   addContact = user => {
     this.state.contacts.some(contact => {
       return contact.name.toLowerCase() === user.name.toLowerCase();
     })
-      ? alert('fadsfsadfasefd')
+      ? alert(`${user.name} is already in list`)
       : this.setState(({ contacts }) => ({
           contacts: [...contacts, user],
         }));
@@ -60,6 +60,12 @@ class App extends Component {
     });
   };
 
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(el => el.id !== contactId),
+    }));
+  };
+
   render() {
     const { number, filter, name } = this.state;
     const visibleContacts = this.getVisibleContacts();
@@ -68,12 +74,13 @@ class App extends Component {
         <div>
           <h2>Phonebook</h2>
           <div className={s.input}>
-            {/* <DoForm
+            <DoForm
               contacts={this.state.contacts}
-              name={this.state.name}
-              handleSubmit={this.handleSubmit}
-            /> */}
-            <form action="name" onSubmit={this.handleSubmit}>
+              addContact={this.addContact}
+              // handleChange={this.handleChange}
+              // handleSubmit={this.handleSubmit}
+            />
+            {/* <form action="name" onSubmit={this.handleSubmit}>
               <h3>Name</h3>
               <input
                 type="text"
@@ -97,7 +104,7 @@ class App extends Component {
                 value={number}
               />
               <button>Add contact</button>
-            </form>
+            </form> */}
           </div>
         </div>
         <div>
@@ -106,9 +113,14 @@ class App extends Component {
 
           <ul className={s.contactList}>
             {visibleContacts.map(contact => (
-              <li className={s.listItem} key={nanoid()}>
+              <li className={s.listItem} key={contact.id}>
                 <span>{contact.name}: </span> <span>{contact.number}</span>
-                <button type="button">Delete</button>
+                <button
+                  type="button"
+                  onClick={e => this.deleteContact(contact.id)}
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
