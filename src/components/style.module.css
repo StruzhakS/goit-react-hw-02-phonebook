@@ -8,3 +8,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.contactList {
+  margin: 0 auto;
+  width: 300px;
+  list-style: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px;
+}
