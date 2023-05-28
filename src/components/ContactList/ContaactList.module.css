@@ -1,0 +1,33 @@
+.deleteButton {
+  background-color: rgba(255, 136, 127, 0.53);
+  width: 200px;
+  height: 40px;
+  font-style: 18px;
+  border-radius: 10px;
+  border-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* margin: 0 auto; */
+  cursor: pointer;
+}
+.deleteButton:hover {
+  background-color: rgba(255, 136, 127, 0.781);
+}
+.contactList {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+
+  border: 1px solid salmon;
+}
+
+.name {
+  margin-right: 20px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-around;
+}

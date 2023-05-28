@@ -3,6 +3,7 @@ import { Component } from 'react';
 import DoForm from '../DoForm/DoForm';
 import Filter from '../FilterCOntacts/Filtercontacts';
 import ContactList from '../ContactList/ContactList';
+import ClearButton from 'components/ClearButton/ClearButton';
 
 class App extends Component {
   state = {
@@ -13,6 +14,12 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
+  };
+  clearContact = () => {
+    this.setState({
+      contacts: [],
+    });
+    return;
   };
   addContact = user => {
     this.state.contacts.some(contact => {
@@ -53,7 +60,7 @@ class App extends Component {
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
     return (
-      <>
+      <div className={s.container}>
         <div className={s.form}>
           <h2>Phonebook</h2>
           <div className={s.input}>
@@ -64,14 +71,29 @@ class App extends Component {
           </div>
         </div>
         <div>
-          <h2>Contacts</h2>
-          <Filter value={filter} filterContacts={this.filterContacts} />
+          {this.state.contacts.length ? <h2>Contacts</h2> : ''}
+
+          {this.state.contacts.length > 1 ? (
+            <Filter value={filter} filterContacts={this.filterContacts} />
+          ) : (
+            ''
+          )}
+
           <ContactList
             visibleContacts={visibleContacts}
             deleteContact={this.deleteContact}
           />
         </div>
-      </>
+        {this.state.contacts.length ? (
+          <ClearButton clearContact={this.clearContact} />
+        ) : (
+          ''
+        )}
+        <p className={s.totalContacts}>
+          Total Contacts:{' '}
+          <span className={s.totalNumber}>{this.state.contacts.length}</span>
+        </p>
+      </div>
     );
   }
 }

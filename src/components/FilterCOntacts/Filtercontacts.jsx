@@ -1,11 +1,13 @@
 import propTypes from 'prop-types';
 import React from 'react';
+import s from './Filtercontacts.module.css';
 
 const Filter = ({ filterContacts, value }) => {
   return (
     <label>
       Find contacts by name
       <input
+        className={s.input}
         onChange={filterContacts}
         name="filter"
         type="text"

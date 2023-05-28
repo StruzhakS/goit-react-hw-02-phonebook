@@ -8,6 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(15, 2, 237);
+  background: linear-gradient(90deg, #faf0cd, #fab397);
 }
 ul {
   list-style: none;
