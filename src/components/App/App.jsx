@@ -8,12 +8,12 @@ import ClearButton from 'components/ClearButton/ClearButton';
 class App extends Component {
   state = {
     contacts: [
-      { id: 'id-1', name: 'Julia Turkina', number: '050-994-86-46' },
-      { id: 'id-6', name: 'Vova Turkin', number: '095-572-81-12' },
+      { id: 'id-1', name: 'Julia Turkina', number: '050-111-86-46' },
+      { id: 'id-6', name: 'Vova Turkin', number: '095-222-81-12' },
       { id: 'id-4', name: 'Kyivstar', number: '0-800-300-460' },
       { id: 'id-5', name: 'Ukrtelecom', number: '0-800-506-800' },
       { id: 'id-7', name: 'Serhii Struzhak', number: '0666-77-22-74' },
-      { id: 'id-2', name: 'Nosach', number: '0506114102' },
+      { id: 'id-2', name: 'Nosach', number: '0505554102' },
     ],
     filter: '',
   };
