@@ -4,8 +4,8 @@ import s from './Filtercontacts.module.css';
 
 const Filter = ({ filterContacts, value }) => {
   return (
-    <label>
-      Find contacts by name
+    <label className={s.filter}>
+      <p className={s.filtereText}> Find contacts by name</p>
       <input
         className={s.input}
         onChange={filterContacts}

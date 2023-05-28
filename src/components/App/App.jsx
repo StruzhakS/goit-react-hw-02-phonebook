@@ -8,10 +8,12 @@ import ClearButton from 'components/ClearButton/ClearButton';
 class App extends Component {
   state = {
     contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+      { id: 'id-1', name: 'Julia Turkina', number: '050-994-86-46' },
+      { id: 'id-6', name: 'Vova Turkin', number: '095-572-81-12' },
+      { id: 'id-4', name: 'Kyivstar', number: '0-800-300-460' },
+      { id: 'id-5', name: 'Ukrtelecom', number: '0-800-506-800' },
+      { id: 'id-7', name: 'Serhii Struzhak', number: '0666-77-22-74' },
+      { id: 'id-2', name: 'Nosach', number: '0506114102' },
     ],
     filter: '',
   };
@@ -72,17 +74,19 @@ class App extends Component {
         </div>
         <div>
           {this.state.contacts.length ? <h2>Contacts</h2> : ''}
-
           {this.state.contacts.length > 1 ? (
             <Filter value={filter} filterContacts={this.filterContacts} />
           ) : (
             ''
           )}
-
-          <ContactList
-            visibleContacts={visibleContacts}
-            deleteContact={this.deleteContact}
-          />
+          {this.state.contacts.length ? (
+            <ContactList
+              visibleContacts={visibleContacts}
+              deleteContact={this.deleteContact}
+            />
+          ) : (
+            ''
+          )}
         </div>
         {this.state.contacts.length ? (
           <ClearButton clearContact={this.clearContact} />

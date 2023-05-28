@@ -6,8 +6,7 @@ const ContactList = ({ visibleContacts, deleteContact }) => {
     <ul className={s.contactList}>
       {visibleContacts.map(contact => (
         <li className={s.listItem} key={contact.id}>
-          <span className={s.name}>{contact.name}: </span>{' '}
-          <span className={s.name}>{contact.number}</span>
+          <p className={s.name}>{contact.name}: </p> <p>{contact.number}</p>
           <button
             className={s.deleteButton}
             type="button"
