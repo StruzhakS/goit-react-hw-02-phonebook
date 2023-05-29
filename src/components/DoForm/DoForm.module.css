@@ -7,8 +7,9 @@
 .input {
   width: 200px;
   height: 30px;
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 10px;
+  letter-spacing: 0.04em;
   line-height: 1.2;
   border-radius: 5px;
   border-color: transparent;
@@ -26,12 +27,13 @@
   background-color: rgba(127, 255, 212, 0.53);
   width: 100px;
   height: 40px;
-  font-style: 18px;
   border-radius: 10px;
   border-color: transparent;
+  outline-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 0 auto;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .addButton:hover {

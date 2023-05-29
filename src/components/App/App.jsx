@@ -13,7 +13,6 @@ class App extends Component {
       { id: 'id-4', name: 'Kyivstar', number: '0-800-300-460' },
       { id: 'id-5', name: 'Ukrtelecom', number: '0-800-506-800' },
       { id: 'id-7', name: 'Serhii Struzhak', number: '0666-77-22-74' },
-      { id: 'id-2', name: 'Nosach', number: '0505554102' },
     ],
     filter: '',
   };
@@ -88,14 +87,14 @@ class App extends Component {
             ''
           )}
         </div>
-        {this.state.contacts.length ? (
+        {this.state.contacts.length === visibleContacts.length ? (
           <ClearButton clearContact={this.clearContact} />
         ) : (
           ''
         )}
         <p className={s.totalContacts}>
-          Total Contacts:{' '}
-          <span className={s.totalNumber}>{this.state.contacts.length}</span>
+          Total Contacts:
+          <span className={s.totalNumber}>{visibleContacts.length}</span>
         </p>
       </div>
     );

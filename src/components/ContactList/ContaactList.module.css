@@ -1,5 +1,5 @@
 .deleteButton {
-  background-color: rgba(255, 136, 127, 0.53);
+  background-color: rgba(253, 146, 139, 0.53);
   width: 200px;
   height: 40px;
   font-style: 18px;
@@ -10,17 +10,18 @@
   cursor: pointer;
 }
 .deleteButton:hover {
-  background-color: rgba(255, 136, 127, 0.781);
+  background-color: rgba(247, 121, 112, 0.655);
 }
 .contactList {
   width: 600px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   margin: 20px auto;
 
-  border: 1px solid salmon;
+  /* border: 1px solid salmon; */
 }
 
 .name {
@@ -30,7 +31,16 @@
 
 .listItem {
   display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
   justify-content: space-between;
   width: 600px;
-  border-bottom: 1px dotted rgba(250, 128, 114, 0.703);
+  /* height: 200px; */
+  /* border: 1px dotted rgba(250, 128, 114, 0.703); */
+  box-shadow: rgba(250, 128, 114, 0.7) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+.listItem:hover {
+  background-color: rgba(245, 149, 142, 0.538);
+  box-shadow: rgba(255, 77, 57, 0.795) 0px 2px 8px 0px;
 }
