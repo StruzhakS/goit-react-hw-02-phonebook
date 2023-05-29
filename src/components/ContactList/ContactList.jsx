@@ -1,12 +1,12 @@
 import s from './ContaactList.module.css';
 import propTypes from 'prop-types';
 
-const ContactList = ({ visibleContacts, deleteContact }) => {
+const ContactList = ({ visibleContacts, deleteContact, onClickItem }) => {
   return (
     <ul className={s.contactList}>
       {visibleContacts.map(contact => (
         <li
-          onClick={e => console.log(11)}
+          onClick={e => onClickItem(e)}
           className={s.listItem}
           key={contact.id}
         >
@@ -27,5 +27,6 @@ const ContactList = ({ visibleContacts, deleteContact }) => {
 ContactList.propTypes = {
   visibleContacts: propTypes.array.isRequired,
   deleteContact: propTypes.func.isRequired,
+  onClickItem: propTypes.func.isRequired,
 };
 export default ContactList;

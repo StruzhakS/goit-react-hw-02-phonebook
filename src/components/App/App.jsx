@@ -56,7 +56,9 @@ class App extends Component {
       contacts: prevState.contacts.filter(el => el.id !== contactId),
     }));
   };
-
+  onClickItem = e => {
+    if (e.target.nodeName !== 'BUTTON') console.dir('Тут має бути модалка) ');
+  };
   render() {
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
@@ -82,6 +84,7 @@ class App extends Component {
             <ContactList
               visibleContacts={visibleContacts}
               deleteContact={this.deleteContact}
+              onClickItem={this.onClickItem}
             />
           ) : (
             ''
