@@ -87,7 +87,8 @@ class App extends Component {
             ''
           )}
         </div>
-        {this.state.contacts.length === visibleContacts.length ? (
+        {(this.state.contacts.length === visibleContacts.length) &
+        (visibleContacts.length > 1) ? (
           <ClearButton clearContact={this.clearContact} />
         ) : (
           ''
